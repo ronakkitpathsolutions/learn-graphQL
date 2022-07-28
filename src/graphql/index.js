@@ -1,8 +1,13 @@
-import { ApolloClient, InMemoryCache } from "@apollo/client";
+import { ApolloClient, createHttpLink, InMemoryCache } from "@apollo/client"
+
+const link = createHttpLink({
+    uri: 'https://graphqlzero.almansi.me/api',
+    credentials: 'same-origin'
+});
 
 const client = new ApolloClient({
-    uri: 'https://flyby-gateway.herokuapp.com/',
     cache: new InMemoryCache(),
-});
+    link
+})
 
 export default client
