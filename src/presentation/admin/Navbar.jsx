@@ -10,7 +10,7 @@ const Navbar = ({ collapsed, ...props }) => {
   return (
     <Fragment {...props} >
       <Sider trigger={null} collapsible {...{ collapsed }}>
-        <div className="logo" />
+        <div className="logo">LOGO</div>
         <Menu theme="dark" mode="inline" {...{ defaultSelectedKeys }}>
           {
             items?.map((value) => {

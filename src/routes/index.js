@@ -7,6 +7,11 @@ const Posts = lazy(() => import('../presentation/admin/Posts'))
 
 const routes = [
   {
+    id: "initial",
+    path: '/',
+    element: <Users/>
+  },
+  {
     id: "users",
     path: '/users',
     element: <Users/>

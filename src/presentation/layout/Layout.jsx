@@ -3,6 +3,7 @@ import { MenuFoldOutlined, MenuUnfoldOutlined } from '@ant-design/icons';
 import { Layout } from 'antd';
 import Navbar from '../admin/Navbar';
 import { Route, Routes } from 'react-router-dom';
+import Error404 from '../../shared/Error404';
 const { Header, Content } = Layout;
 
 const Dashboard = ({routes, ...props }) => {
@@ -12,7 +13,7 @@ const Dashboard = ({routes, ...props }) => {
       <Navbar {...{ collapsed }} />
       <Layout className="site-layout">
         <Header
-          className="site-layout-background"
+          className="site-layout-background custom-header"
           style={{
             padding: 0,
           }}
@@ -33,6 +34,7 @@ const Dashboard = ({routes, ...props }) => {
             {
               routes.map((data, id) => <Route key={id} {...data} />)
             }
+            <Route path='*' element={<Error404/>} />
           </Routes>
         </Content>
       </Layout>
