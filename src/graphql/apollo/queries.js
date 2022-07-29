@@ -1,8 +1,8 @@
 import { gql } from '@apollo/client';
 
 export const GET_ALL_USERS = gql`
-  query GetUsers {
-    users {
+  query GetUsers($search: String) {
+    users(options: {search: {q: $search}}) {
         data {
           id
           name
@@ -24,6 +24,7 @@ export const GET_ALL_USERS = gql`
             bs
             catchPhrase
           }
+          phone
         }
       }
   }

@@ -6,6 +6,18 @@
 body {
   font-family: "Poppins", sans-serif;
 }
+.main-component::-webkit-scrollbar{
+  display: none!important;
+}
+.mb-2{
+  margin-bottom: 1.25rem!important;
+}
+.font-size-25 svg{
+  font-size: 1.25rem!important;
+}
+.overflow-auto{
+  overflow: auto!important;
+}
 #components-layout-demo-custom-trigger .trigger {
   padding: 0 24px;
   font-size: 18px;

@@ -1,16 +1,17 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { MenuFoldOutlined, MenuUnfoldOutlined } from '@ant-design/icons';
 import { Layout } from 'antd';
 import Navbar from '../admin/Navbar';
 import { Route, Routes } from 'react-router-dom';
 import Error404 from '../../shared/Error404';
+import useToggle from '../../hooks/useToggle';
 const { Header, Content } = Layout;
 
 const Dashboard = ({routes, ...props }) => {
-  const [collapsed, setCollapsed] = useState(false);
+  const [toggle, setToggle] = useToggle(false);
   return (
     <Layout {...props} >
-      <Navbar {...{ collapsed }} />
+      <Navbar {...{ collapsed: toggle }} />
       <Layout className="site-layout">
         <Header
           className="site-layout-background custom-header"
@@ -18,13 +19,13 @@ const Dashboard = ({routes, ...props }) => {
             padding: 0,
           }}
         >
-          {React.createElement(collapsed ? MenuUnfoldOutlined : MenuFoldOutlined, {
+          {React.createElement(toggle ? MenuUnfoldOutlined : MenuFoldOutlined, {
             className: 'trigger custom-toggle',
-            onClick: () => setCollapsed(!collapsed),
+            onClick: () => setToggle(!toggle),
           })}
         </Header>
         <Content
-          className="site-layout-background"
+          className="site-layout-background overflow-auto main-component"
           style={{
             margin: '24px 16px',
             padding: 24
