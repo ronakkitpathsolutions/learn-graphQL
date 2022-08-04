@@ -1,4 +1,4 @@
-import { FAVOURITE_USER, FAVOURITE_USERS } from "../../utils/constant";
+import { FAVOURITE_USER, FAVOURITE_USERS, IS_PROFILE_COMPONENT } from "../../utils/constant";
 
 const initialState = {
     favoutite_users: {},
@@ -15,6 +15,10 @@ export const usersMetaData = (state = initialState, action) => {
         case FAVOURITE_USER:
             return {
                 ...state, current_view_user: payload
+            }
+        case IS_PROFILE_COMPONENT:
+            return {
+                ...state, is_profile_component: payload
             }
         default: return state
     }

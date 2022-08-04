@@ -1,4 +1,5 @@
 import React, { lazy } from 'react'
+const Profile = lazy(() => import('../presentation/admin/Profile'))
 const Dashboard = lazy(() => import('../presentation/layout/Layout'))
 const Users = lazy(() => import('../presentation/admin/Users'))
 const Photos = lazy(() => import('../presentation/admin/Photos'))
@@ -30,6 +31,11 @@ const routes = [
     id: "posts",
     path: '/posts',
     element: <Posts/>
+  },
+  {
+    id: "profile",
+    path: '/profiles/:id',
+    element: <Profile/>
   }
 ]
 

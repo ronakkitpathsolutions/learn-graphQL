@@ -2,7 +2,7 @@ import React from 'react'
 
 const Commets = () => {
   return (
-    <div>Commets</div>
+    <div className='default-margin' >Commets</div>
   )
 }
 

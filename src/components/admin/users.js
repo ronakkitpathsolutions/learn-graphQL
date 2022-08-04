@@ -8,8 +8,9 @@ const useUsers = () => {
     const favoutite_users = useSelector(({usersMetaData}) => usersMetaData?.favoutite_users)
     const dispatch = useDispatch()
 
-    const handleFavourite = (id) => {
-        dispatch(allFavouriteUsers({...favoutite_users, [id]: !favoutite_users[id]}))
+    const handleFavourite = (name) => {
+        console.log('name', name)
+        dispatch(allFavouriteUsers({...favoutite_users, [name]: !favoutite_users[name]}))
     }
 
     const handleSearch = (value) => {

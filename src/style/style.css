@@ -6,17 +6,20 @@
 body {
   font-family: "Poppins", sans-serif;
 }
-.main-component::-webkit-scrollbar{
-  display: none!important;
+.main-component::-webkit-scrollbar {
+  display: none !important;
 }
-.mb-2{
-  margin-bottom: 1.25rem!important;
+.mb-2 {
+  margin-bottom: 1.25rem !important;
 }
-.font-size-25 svg{
-  font-size: 1.25rem!important;
+.font-size-25 svg {
+  font-size: 1.25rem !important;
 }
-.overflow-auto{
-  overflow: auto!important;
+.default-margin {
+  margin: 24px !important;
+}
+.overflow-auto {
+  overflow: auto !important;
 }
 #components-layout-demo-custom-trigger .trigger {
   padding: 0 24px;
@@ -33,13 +36,16 @@ body {
 .ant-layout-sider-children .logo {
   height: 32px !important;
   margin: 16px !important;
-  color: white!important;
-  font-size: 1.25rem!important;
-  text-align: center!important;
+  color: white !important;
+  font-size: 1.25rem !important;
+  text-align: center !important;
 }
 
 .site-layout .site-layout-background {
   background: #fff;
+}
+.site-layout-background-white {
+  background: #fff !important;
 }
 .ant-layout.ant-layout-has-sider {
   height: 100vh !important;
@@ -47,19 +53,27 @@ body {
 .custom-toggle {
   margin-left: 1rem !important;
 }
+.profile-nav-bg {
+  height: 300px;
+  margin-top: 0px;
+  border-radius: 12px;
+  box-shadow: 0 20px 27px rgb(0 0 0 / 5%);
+  background-size: cover;
+  background-position: 50%;
+}
 .custom-header {
   color: white !important;
   height: 68px !important;
   line-height: 64px !important;
   background: #001529 !important;
 }
-.custom-loader{
+.custom-loader {
   width: 100%;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.custom-loader .ant-spin-spinning{
-  display: flex!important;
+.custom-loader .ant-spin-spinning {
+  display: flex !important;
 }

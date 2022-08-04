@@ -2,13 +2,17 @@ import React from 'react';
 import { MenuFoldOutlined, MenuUnfoldOutlined } from '@ant-design/icons';
 import { Layout } from 'antd';
 import Navbar from '../admin/Navbar';
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, useLocation } from 'react-router-dom';
 import Error404 from '../../shared/Error404';
 import useToggle from '../../hooks/useToggle';
 const { Header, Content } = Layout;
 
 const Dashboard = ({routes, ...props }) => {
+  const location = useLocation();
   const [toggle, setToggle] = useToggle(false);
+
+  console.log('location', location)
+
   return (
     <Layout {...props} >
       <Navbar {...{ collapsed: toggle }} />
@@ -26,14 +30,10 @@ const Dashboard = ({routes, ...props }) => {
         </Header>
         <Content
           className="site-layout-background overflow-auto main-component"
-          style={{
-            margin: '24px 16px',
-            padding: 24
-          }}
-        >
+          style={{ margin: '24px 16px' }}>
           <Routes>
             {
-              routes.map((data, id) => <Route key={id} {...data} />)
+              routes.map((data, id) => <Route {...{meta: data}} element={data?.element} key={id} {...data} />)
             }
             <Route path='*' element={<Error404/>} />
           </Routes>
