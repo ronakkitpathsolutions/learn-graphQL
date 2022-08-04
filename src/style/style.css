@@ -41,8 +41,8 @@ body {
   text-align: center !important;
 }
 
-.site-layout .site-layout-background {
-  background: #fff;
+.bg-white{
+  background: #fff!important;
 }
 .site-layout-background-white {
   background: #fff !important;
@@ -53,13 +53,51 @@ body {
 .custom-toggle {
   margin-left: 1rem !important;
 }
+.profile-component{
+  padding: 1.25rem;
+}
 .profile-nav-bg {
+  width: 100%;
   height: 300px;
-  margin-top: 0px;
   border-radius: 12px;
-  box-shadow: 0 20px 27px rgb(0 0 0 / 5%);
-  background-size: cover;
-  background-position: 50%;
+}
+.card-profile-head .ant-card-head {
+  border-bottom: 0px!important;
+  padding: 0px 16px!important;
+}
+
+.card-profile-head {
+  width: 90%;
+  margin: -53px auto 24px!important;
+  border-radius: 12px!important;
+}
+
+.card-profile-head .ant-card-head .ant-avatar {
+  box-shadow: 0 5px 10px rgb(0 0 0 / 12%)!important;
+  border-radius: 8px!important;
+  margin: 0!important;
+}
+
+.card-profile-head .ant-card-head .avatar-info {
+  margin-left: 16px !important;
+}
+.ant-card-head-title p {
+  font-weight: 600 !important;
+  color: #8c8c8c !important;
+  margin-bottom: 0 !important;
+}
+
+.card-profile-head .ant-card-head .avatar-info h5 {
+  font-size: 20px !important;
+}
+
+.card-profile-head .ant-card-head .avatar-info h5 {
+  font-size: 20px !important;
+}
+
+.card-profile-head .ant-radio-group .ant-radio-button-wrapper {
+  height: auto !important;
+  font-weight: 700 !important;
 }
 .custom-header {
   color: white !important;
@@ -76,4 +114,13 @@ body {
 }
 .custom-loader .ant-spin-spinning {
   display: flex !important;
+}
+.mainClassName{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+.default-margin{
+  display: inline-block!important;
 }

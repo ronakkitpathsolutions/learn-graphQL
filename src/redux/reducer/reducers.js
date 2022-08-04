@@ -1,8 +1,11 @@
-import { FAVOURITE_USER, FAVOURITE_USERS, IS_PROFILE_COMPONENT } from "../../utils/constant";
+import { FAVOURITE_USER, FAVOURITE_USERS, IS_PROFILE_COMPONENT } from "../../utils/constant/index";
 
 const initialState = {
     favoutite_users: {},
-    current_view_user: false
+    current_view_user: false,
+    users:{
+        allUsersImageLoaded: false
+    }
 }
 
 export const usersMetaData = (state = initialState, action) => {

@@ -1,7 +1,7 @@
 import React, { Fragment, Suspense } from 'react'
 import Routing from './routes'
 import './style/style.css'
-import 'antd/dist/antd.css'
+import 'antd/dist/antd.min.css'
 import CustomLoader from './shared/CustomLoader'
 
 const App = ({...props}) => {

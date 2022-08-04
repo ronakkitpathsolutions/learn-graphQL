@@ -27,5 +27,29 @@ export const GET_ALL_USERS = gql`
           phone
         }
       }
-  }
-`;
+  }`;
+
+export const GET_PARTICULAR_USER = gql`
+  query GetUsers($id: ID!) {
+    user(id: $id) {
+      id
+      email
+      name
+      phone
+      website
+      username
+      company {
+        name
+      }
+      address {
+        city
+        street
+        zipcode
+        suite
+        geo {
+          lat
+          lng
+        }
+      }
+    }
+  }`;
