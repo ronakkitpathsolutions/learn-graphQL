@@ -5,16 +5,15 @@ import { GET_PARTICULAR_USER } from '../../graphql/apollo/queries'
 
 const useProfile = () => {
   const { id } = useParams()
-  const { error, data, loading } = useQuery(GET_PARTICULAR_USER, { variables: {id: String(id)}})
-
-  console.log('data', data)
+  const { error, data, loading } = useQuery(GET_PARTICULAR_USER, { variables: { id: String(id) } })
 
   const profileData = useMemo(() => {
-    const { name, username, id, phone, website, company, address } = data?.user
-    return { name, username, id, phone, website, companyName: company?.name, address:address }
+    if (data && !loading) {
+      const { name, username, id, phone, website, company, address } = data?.user
+      return { name, username, id, phone, website, companyName: company?.name, address: address }
+    }
+  }, [data, loading])
 
-  },[data])
-  
   return [{ error, data, loading, profileData }, id]
 }
 
