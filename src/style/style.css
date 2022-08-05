@@ -6,6 +6,35 @@
 body {
   font-family: "Poppins", sans-serif;
 }
+.text-center {
+  text-align: center!important;
+}
+.h6,h6 {
+  font-size: 16px;
+}
+.font-semibold {
+  font-weight: 600!important;
+}
+.text-muted {
+  color: #8c8c8c!important;
+}
+.ant-input {
+  border-radius: 6px!important;
+}
+.ant-input {
+  font-weight: 600!important;
+  color: #8c8c8c!important;
+}
+.ant-input {
+  height: 40px!important;
+  border: 1px solid #d9d9d9!important;
+}
+.font-bold {
+  font-weight: 700!important;
+}
+.text-dark {
+  color: #141414!important;
+}
 .main-component::-webkit-scrollbar {
   display: none !important;
 }
@@ -123,4 +152,45 @@ body {
 }
 .default-margin{
   display: inline-block!important;
+}
+.settings-list {
+  list-style: none;
+  padding: 0;
+}
+.settings-list > li:first-child {
+  padding-top: 0;
+}
+.settings-list > li {
+  padding: 12px 0;
+}
+
+.settings-list > li h6 {
+  font-size: 12px;
+  color: #8c8c8c;
+  margin: 0;
+  font-weight: 700;
+}
+.settings-list > li span {
+  margin-left: 16px;
+  color: #141414;
+}
+.card-profile-information hr {
+  opacity: 0.2!important;
+}
+.card-profile-information .ant-descriptions .ant-descriptions-row > td,
+.card-profile-information .ant-descriptions .ant-descriptions-row > th {
+  padding-bottom: 16px!important;
+}
+.conversations-list .ant-list-item-meta-description {
+  font-size: 12px;
+  font-weight: 600;
+  color: #8c8c8c;
+}
+
+.conversations-list .ant-avatar {
+  border-radius: 10.5px;
+  box-shadow: 0 4px 6px rgb(0 0 0 / 12%);
+}
+.conversations-list .ant-list-item {
+  padding: 14px 0;
 }

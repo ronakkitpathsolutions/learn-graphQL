@@ -3,10 +3,10 @@ import { Card } from 'antd';
 
 const { Meta } = Card;
 
-const CustomCard = ({title, description, cover, avatar, isShowMeta, isFavourite, actions, ...props }) => {
+const CustomCard = ({children, title, headertitle, description, cover, avatar, isShowMeta, isFavourite, actions, width, ...props }) => {
     return (
-        <Card {...props} {...{cover, actions}} style={{ width: 300 }}>
-            {isShowMeta ? <Meta {...{title, description, avatar}}/> : null}
+        <Card {...props} {...{cover, actions, title: headertitle}} style={{ width: width }}>
+            {isShowMeta ? <Meta {...{title, description, avatar}}/> : children}
         </Card>
     )
 }

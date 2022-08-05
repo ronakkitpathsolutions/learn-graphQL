@@ -21,15 +21,15 @@ const Users = ({ ...props }) => {
     <div className='default-margin'>
       <Row align="middle" justify='start' >
         <Col className="mb-2"  >
-          <CustomSearch {...{ handleSearch }} allowClear enterButton="Search" size="large" placeholder="Search users" />
+          <CustomSearch {...{ handleSearch }} allowClear enterbutton="Search" size="large" placeholder="Search users" />
         </Col>
       </Row>
       <Row {...props} justify="space-evenly" align="middle" >
         {
           data['users']?.data?.map((users) => {
             return (
-              <Col className="mb-2" >
-                <CustomCard key={users?.id}
+              <Col key={users?.id} className="mb-2" >
+                <CustomCard width={300} key={users?.id}
                   isShowMeta
                   cover={<img alt={users?.username} src={`https://picsum.photos/seed/${users?.username}/300/200`} />}
                   avatar={<Avatar alt={users?.username} src={`https://joeschmoe.io/api/v1/:${users?.id}`} />}
