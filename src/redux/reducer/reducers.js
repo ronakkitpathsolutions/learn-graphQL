@@ -1,7 +1,8 @@
-import { FAVOURITE_USER, FAVOURITE_USERS, IS_PROFILE_COMPONENT } from "../../utils/constant/index";
+import { FAVOURITE_POSTS, FAVOURITE_USER, FAVOURITE_USERS, IS_PROFILE_COMPONENT } from "../../utils/constant/index";
 
 const initialState = {
     favoutite_users: {},
+    favourite_posts: {},
     current_view_user: false,
     users:{
         allUsersImageLoaded: false
@@ -14,6 +15,10 @@ export const usersMetaData = (state = initialState, action) => {
         case FAVOURITE_USERS:
             return {
                 ...state, favoutite_users: payload
+            }
+        case FAVOURITE_POSTS:
+            return {
+                ...state, favourite_posts: payload
             }
         case FAVOURITE_USER:
             return {

@@ -1,4 +1,5 @@
 import React, { lazy } from 'react'
+import Post from '../presentation/admin/Post'
 const Profile = lazy(() => import('../presentation/admin/Profile'))
 const Dashboard = lazy(() => import('../presentation/layout/Layout'))
 const Users = lazy(() => import('../presentation/admin/Users'))
@@ -36,6 +37,11 @@ const routes = [
     id: "profile",
     path: '/profiles/:id',
     element: <Profile className="profile-component" />
+  },
+  {
+    id: "post",
+    path: 'posts/:id/comments',
+    element: <Post className="post-component" />
   }
 ]
 

@@ -1,0 +1,21 @@
+import { useQuery } from '@apollo/client'
+import { useMemo } from 'react'
+import { useParams } from 'react-router-dom'
+import { GET_PARTICULAR_POST } from '../../graphql/apollo/queries'
+
+
+const usePost = () => {
+  const { id } = useParams()
+  const { error, data, loading } = useQuery(GET_PARTICULAR_POST, { variables: { id: String(id) } })
+
+  const profileData = useMemo(() => {
+    if (data && !loading) {
+      const { name, username, id, phone, website, company, address } = data?.user
+      return { name, username, id, phone, website, companyName: company?.name, address: address }
+    }
+  }, [data, loading])
+
+  return [{ error, data, loading, profileData }, id]
+}
+
+export default usePost

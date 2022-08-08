@@ -21,7 +21,7 @@ const Users = ({ ...props }) => {
     <div className='default-margin'>
       <Row align="middle" justify='start' >
         <Col className="mb-2"  >
-          <CustomSearch {...{ handleSearch }} allowClear enterbutton="Search" size="large" placeholder="Search users" />
+          <CustomSearch {...{ handleSearch }} allowClear enterButton="Search" size="large" placeholder="Search users" />
         </Col>
       </Row>
       <Row {...props} justify="space-evenly" align="middle" >

@@ -1,9 +1,9 @@
 import React from 'react'
 
-const Commets = () => {
+const Comments = () => {
   return (
-    <div className='default-margin' >Commets</div>
+    <div className='default-margin' >Comments</div>
   )
 }
 
-export default Commets
+export default Comments

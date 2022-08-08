@@ -30,7 +30,7 @@ export const GET_ALL_USERS = gql`
   }`;
 
 export const GET_PARTICULAR_USER = gql`
-  query GetUsers($id: ID!) {
+  query GetUser($id: ID!) {
     user(id: $id) {
       id
       email
@@ -53,3 +53,39 @@ export const GET_PARTICULAR_USER = gql`
       }
     }
   }`;
+
+export const GET_PARTICULAR_POST = gql`
+  query GetPost($id: ID!) {
+      post(id: $id) {
+        id
+        title
+        body
+        comments {
+          data {
+            body
+            email
+            id
+            name
+          }
+        }
+      }
+  }`;
+
+export const GET_ALL_POSTS = gql`
+  query getPostData {
+    posts {
+      data {
+        id
+        title
+        body
+        comments {
+          data {
+            id
+            body
+            email
+            name
+          }
+        }
+      }
+    }
+  }`; 
