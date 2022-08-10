@@ -18,17 +18,6 @@ body {
 .text-muted {
   color: #8c8c8c!important;
 }
-.ant-input {
-  border-radius: 6px!important;
-}
-.ant-input {
-  font-weight: 600!important;
-  color: #8c8c8c!important;
-}
-.ant-input {
-  height: 40px!important;
-  border: 1px solid #d9d9d9!important;
-}
 .font-bold {
   font-weight: 700!important;
 }

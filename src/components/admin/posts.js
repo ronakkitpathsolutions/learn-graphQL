@@ -5,7 +5,11 @@ import { allFavouritePosts } from '../../redux/actions/actions'
 
 const usePosts = () => {
     const dispatch = useDispatch()
-    const {data, loading, error} = useQuery(GET_ALL_POSTS)
+    const {data, loading, error} = useQuery(GET_ALL_POSTS, { variables: {
+        field: "",
+        page: 0,
+        pageSize: 0
+    } })
     const usersData = useSelector(({usersMetaData}) => usersMetaData)
 
     const handleFavourite = (title) => {
