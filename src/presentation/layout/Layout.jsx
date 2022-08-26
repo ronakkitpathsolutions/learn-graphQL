@@ -30,7 +30,7 @@ const Dashboard = ({routes, ...props }) => {
           style={{ margin: '24px 16px' }}>
           <Routes>
             {
-              routes.map((data, id) => <Route {...{meta: data}} element={data?.element} key={id} {...data} />)
+              routes?.map((data, id) => <Route {...{meta: data}} element={data?.element} key={id} {...data} />)
             }
             <Route path='*' element={<Error404/>} />
           </Routes>

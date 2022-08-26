@@ -8,32 +8,33 @@ import Error404 from '../../shared/Error404'
 import useHistory from '../../hooks/useHistory';
 import CustomBadge from '../../shared/CustomBadge';
 import CustomSearch from '../../shared/CustomSearch';
+import CustomPagination from '../../shared/CustomPagination';
 
 const Posts = ({ ...props }) => {
-  const [{ data, loading, error }, usersData, handleFavourite] = usePosts()
+  const [{ data, loading, error }, usersData, handleFavourite, handleSearch, handleCurrentPage, paginationData] = usePosts()
   const [handleRedirect] = useHistory()
 
   if (error) return <Error404 />
   if (loading) return <CustomSkeleton looped={16} isLoaded={loading} mainClassName="main-skeleton" className='default-margin' type="card" />
 
   return (
-    <div className='default-margin'>
+    <div className=''>
       <div className='filter-posts' >
         <Row align="middle" justify='start' >
           <Col className="mb-2"  >
-            <CustomSearch {...{ handleSearch:"" }} allowClear enterButton="Search" size="large" placeholder="Search users" />
+            <CustomSearch {...{ handleSearch }} allowClear enterButton="Search" size="large" placeholder="Search users" />
           </Col>
         </Row>
       </div>
       <div className='posts-component' >
-        <Row {...props} justify="space-evenly" align="middle" >
+        <Row  {...props} justify="space-evenly" align="start" >
           {
             data['posts']?.data?.map((value) => {
               return (
-                <Col key={value?.id} className="mb-2" >
-                  <CustomCard width={400} key={value?.id}
+                <Col key={value?.id} className="mb-2" xs={20} sm={10} md={11} lg={12} xl={5}>
+                  <CustomCard  key={value?.id}
                     isShowMeta
-                    cover={<img alt={value?.title} src={`https://picsum.photos/seed/${value?.id}/300/200`} />}
+                    cover={<img alt={value?.title} src={`https://picsum.photos/seed/${value?.id}/200/150`} />}
 
                     title={value?.title}
                     actions={[
@@ -53,6 +54,9 @@ const Posts = ({ ...props }) => {
             })
           }
         </Row>
+        <div>
+          <CustomPagination {...{handleCurrentPage, paginationData}} />
+        </div>
       </div>
     </div>
   )

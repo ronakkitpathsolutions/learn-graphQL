@@ -72,10 +72,11 @@ export const GET_PARTICULAR_POST = gql`
   }`;
 
 export const GET_ALL_POSTS = gql`
-  query getPostData($field: String, $page: Int, $pageSize: Int) {
+  query getPostData($field: String, $page: Int, $pageSize: Int, $search: String) {
     posts(options:{
       sort: {field: $field},
       paginate: {page: $page, limit: $pageSize}
+      search: { q: $search }
     }) {
       data {
         id

@@ -1,14 +1,20 @@
 import { useQuery } from '@apollo/client'
+import { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { GET_ALL_POSTS } from '../../graphql/apollo/queries'
 import { allFavouritePosts } from '../../redux/actions/actions'
 
 const usePosts = () => {
     const dispatch = useDispatch()
-    const {data, loading, error} = useQuery(GET_ALL_POSTS, { variables: {
+    const [paginationData, setPaginationData] = useState({
+        currentPage: 1,
+        pageSize: 10
+    })
+    const {data, loading, error, refetch} = useQuery(GET_ALL_POSTS, { variables: {
         field: "",
-        page: 0,
-        pageSize: 0
+        page: paginationData?.currentPage,
+        pageSize: paginationData?.pageSize,
+        search: ""
     } })
     const usersData = useSelector(({usersMetaData}) => usersMetaData)
 
@@ -16,7 +22,18 @@ const usePosts = () => {
         dispatch(allFavouritePosts({...usersData?.favourite_posts, [title]: !usersData?.favourite_posts[title]}))
     }
 
-    return [{data, loading, error}, usersData, handleFavourite]
+    const handleSearch = (value) => {
+        refetch({ search: String(value) })
+    }
+
+    const handleCurrentPage = (page, pageSize) => {
+        setPaginationData({
+            ...paginationData, currentPage: page, pageSize
+        })
+        refetch({ page, pageSize })
+    }
+
+    return [{data, loading, error}, usersData, handleFavourite, handleSearch, handleCurrentPage, paginationData]
 }
 
 export default usePosts

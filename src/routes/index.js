@@ -1,5 +1,5 @@
 import React, { lazy } from 'react'
-import Post from '../presentation/admin/Post'
+const Post = lazy(() => import('../presentation/admin/Post')) 
 const Profile = lazy(() => import('../presentation/admin/Profile'))
 const Dashboard = lazy(() => import('../presentation/layout/Layout'))
 const Users = lazy(() => import('../presentation/admin/Users'))
