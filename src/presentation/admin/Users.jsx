@@ -11,7 +11,7 @@ import CustomSkeleton from '../../shared/CustomSkeleton';
 const Users = ({ ...props }) => {
 
 
-  const [handleFavourite, usersData, handleSearch, { error, data, loading }] = useUsers()
+  const [handleFavourite, usersData, handleSearch, { error, data, loading }, handleSearchByPress] = useUsers()
   const [handleRedirect] = useHistory()
 
   if (error) return <Error404 />
@@ -21,15 +21,15 @@ const Users = ({ ...props }) => {
     <div className='default-margin'>
       <Row align="middle" justify='start' >
         <Col className="mb-2"  >
-          <CustomSearch {...{ handleSearch }} allowClear enterButton="Search" size="large" placeholder="Search users" />
+          <CustomSearch {...{ handleSearch, handleSearchByPress }} allowClear enterButton="Search" size="large" placeholder="Search users" />
         </Col>
       </Row>
-      <Row {...props} justify="space-evenly" align="middle" >
+      <Row {...props} justify="start" align="start" >
         {
           data['users']?.data?.map((users) => {
             return (
-              <Col key={users?.id} className="mb-2" >
-                <CustomCard width={300} key={users?.id}
+              <Col key={users?.id} className="mb-2" xs={20} sm={12} md={10} lg={10} xl={8}>
+                <CustomCard className="mx-2 my-2" key={users?.id}
                   isShowMeta
                   cover={<img alt={users?.username} src={`https://picsum.photos/seed/${users?.username}/300/200`} />}
                   avatar={<Avatar alt={users?.username} src={`https://joeschmoe.io/api/v1/:${users?.id}`} />}

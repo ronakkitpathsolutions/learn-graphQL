@@ -23,7 +23,11 @@ const usePosts = () => {
     }
 
     const handleSearch = (value) => {
-        refetch({ search: String(value) })
+        refetch({ search: String(value), page: 1 })
+    }
+
+    const handleSearchByPress = ({target}) => {
+        refetch({ search: String(target?.value), page: 1 })
     }
 
     const handleCurrentPage = (page, pageSize) => {
@@ -33,7 +37,7 @@ const usePosts = () => {
         refetch({ page, pageSize })
     }
 
-    return [{data, loading, error}, usersData, handleFavourite, handleSearch, handleCurrentPage, paginationData]
+    return [{data, loading, error}, usersData, handleFavourite, handleSearch, handleSearchByPress, handleCurrentPage, paginationData]
 }
 
 export default usePosts

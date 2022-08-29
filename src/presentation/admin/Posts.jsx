@@ -11,7 +11,7 @@ import CustomSearch from '../../shared/CustomSearch';
 import CustomPagination from '../../shared/CustomPagination';
 
 const Posts = ({ ...props }) => {
-  const [{ data, loading, error }, usersData, handleFavourite, handleSearch, handleCurrentPage, paginationData] = usePosts()
+  const [{ data, loading, error }, usersData, handleFavourite, handleSearch, handleSearchByPress, handleCurrentPage, paginationData] = usePosts()
   const [handleRedirect] = useHistory()
 
   if (error) return <Error404 />
@@ -22,16 +22,16 @@ const Posts = ({ ...props }) => {
       <div className='filter-posts' >
         <Row align="middle" justify='start' >
           <Col className="mb-2"  >
-            <CustomSearch {...{ handleSearch }} allowClear enterButton="Search" size="large" placeholder="Search users" />
+            <CustomSearch {...{ handleSearch, handleSearchByPress }} allowClear enterButton="Search" size="large" placeholder="Search users" />
           </Col>
         </Row>
       </div>
       <div className='posts-component' >
-        <Row  {...props} justify="space-evenly" align="start" >
+        <Row  {...props} justify="start" align="start" >
           {
             data['posts']?.data?.map((value) => {
               return (
-                <Col key={value?.id} className="mb-2" xs={20} sm={10} md={11} lg={12} xl={5}>
+                <Col key={value?.id} className="mx-2 my-2" xs={21} sm={22} md={10} lg={10} xl={5}>
                   <CustomCard  key={value?.id}
                     isShowMeta
                     cover={<img alt={value?.title} src={`https://picsum.photos/seed/${value?.id}/200/150`} />}

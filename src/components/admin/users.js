@@ -15,8 +15,12 @@ const useUsers = () => {
     const handleSearch = (value) => {
         refetch({ search: String(value) })
     }
+
+    const handleSearchByPress = ({target}) => {
+        refetch({ search: String(target?.value) })
+    }
     
-  return [handleFavourite, usersData, handleSearch, { error, data, loading }]
+  return [handleFavourite, usersData, handleSearch, { error, data, loading }, handleSearchByPress]
 }
 
 export default useUsers

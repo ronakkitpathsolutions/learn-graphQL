@@ -30,6 +30,14 @@ body {
 .mb-2 {
   margin-bottom: 1.25rem !important;
 }
+.my-2 {
+  margin-top: 1.25rem !important;
+  margin-bottom: 1.25rem !important;
+}
+.mx-2 {
+  margin-left: 1.25rem !important;
+  margin-right: 1.25rem !important;
+}
 .font-size-25 svg {
   font-size: 1.25rem !important;
 }
