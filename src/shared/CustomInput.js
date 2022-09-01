@@ -1,7 +1,8 @@
 import React from 'react'
 import { Input, Radio, Switch } from 'antd'
+import TextArea from 'antd/lib/input/TextArea'
 
-const CustomInput = ({type, isDisabled, handleChange, isLoading, isSolid, text, ...props}) => {
+const CustomInput = ({type, rows, isDisabled, handleChange, isLoading, isSolid, text, ...props}) => {
   switch (type) {
     case 'input':
         return <Input onChange={handleChange} disabled={isDisabled} {...props} />
@@ -10,6 +11,8 @@ const CustomInput = ({type, isDisabled, handleChange, isLoading, isSolid, text, 
         <Radio onChange={handleChange} {...props} >{text}</Radio>
     case 'switch':
         return <Switch  onChange={handleChange} loading={isLoading} {...props} />
+    case 'textarea':
+        return <TextArea onChange={handleChange} loading={isLoading} {...props} {...{rows}} />
     default: return null
   }
 }

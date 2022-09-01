@@ -18,7 +18,7 @@ const Posts = ({ ...props }) => {
   if (loading) return <CustomSkeleton looped={16} isLoaded={loading} mainClassName="main-skeleton" className='default-margin' type="card" />
 
   return (
-    <div className=''>
+    <div>
       <div className='filter-posts' >
         <Row align="middle" justify='start' >
           <Col className="mb-2"  >
@@ -26,7 +26,7 @@ const Posts = ({ ...props }) => {
           </Col>
         </Row>
       </div>
-      <div className='posts-component' >
+      <div>
         <Row  {...props} justify="start" align="start" >
           {
             data['posts']?.data?.map((value) => {

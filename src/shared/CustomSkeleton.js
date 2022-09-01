@@ -1,7 +1,7 @@
 import React from 'react'
 import { Skeleton, Space } from 'antd';
 
-const CustomSkeleton = ({ type, looped, mainClassName, isLoaded, ...props }) => {
+const CustomSkeleton = ({ type, looped, mainClassName, isLoaded, rows, ...props }) => {
     switch (type) {
         case 'card':
             return <div className={mainClassName}>
@@ -23,6 +23,16 @@ const CustomSkeleton = ({ type, looped, mainClassName, isLoaded, ...props }) => 
                             <Space>
                                 <Skeleton.Input active={isLoaded} />
                             </Space>
+                        </div>
+                    )
+                }
+            </div>
+        case 'paragraph_avatar':
+            return <div className={mainClassName}>
+                {
+                    Array.from({ length: looped || 1 }, (v, i) => i).map(data =>
+                        <div {...props}  key={data}>
+                            <Skeleton avatar paragraph={{ rows }}/>
                         </div>
                     )
                 }
