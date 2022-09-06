@@ -30,6 +30,12 @@ body {
 .mb-2 {
   margin-bottom: 1.25rem !important;
 }
+.ml-2{
+  margin-left: 1.25rem !important;
+}
+.ml-1{
+  margin-left: 1rem !important;
+}
 .my-2 {
   margin-top: 1.25rem !important;
   margin-bottom: 1.25rem !important;
@@ -46,6 +52,12 @@ body {
   margin-left: 0.5rem !important;
   margin-right: 0.5rem !important;
 }
+.custom_footer{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.color-red {color: red!important;}
 .text-bold-600{
   font-weight: 600!important;
 }

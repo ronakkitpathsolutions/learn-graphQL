@@ -92,4 +92,19 @@ export const GET_ALL_POSTS = gql`
         }
       }
     }
-  }`; 
+  }`;
+
+export const UPDATE_COMMENTS_DATA = gql`
+  mutation updateComments($id: ID!, $name: String, $email: String, $comment: String){
+    updateComment(id: $id, input: {
+      name: $name,
+      email: $email,
+      body: $comment
+    }) {
+      body
+      email
+      id
+      name
+    }
+  }
+`

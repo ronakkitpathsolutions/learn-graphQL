@@ -38,3 +38,14 @@ export const tabData = [
       value: 'albums'
     }
 ]
+
+export const errorMessage = {
+  requiredMessage: {
+    name: "Name is required.",
+    email: "Email is required.",
+    comment: "Comment is required"
+  },
+  invalidMessage: {
+    email: "Invalid email address."
+  }
+}
