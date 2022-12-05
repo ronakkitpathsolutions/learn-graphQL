@@ -1,7 +1,7 @@
 import { errorMessage } from "./constant/constantData"
 import { emailRegex } from "./regex"
 
-export const customValidation = (name, value, data) => {
+export const customValidation = (name, value) => {
     switch (name) {
         case 'name':
         case 'comment':
